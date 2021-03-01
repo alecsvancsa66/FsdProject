@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "fsdProject"
+  "defaultProject": "fsdProject",
+  "cli": {
+    "analytics": false
+  }
 }

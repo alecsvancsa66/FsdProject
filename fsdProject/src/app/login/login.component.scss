@@ -1,0 +1,35 @@
+.example-card {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+ 
+    
+    
+}
+
+.container{
+   background-image: linear-gradient(to top right,#1B44A7,#AD20B9);
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.actionsContainer{
+    display:flex;
+    flex-direction: column;
+    margin-top: 350px;
+    width: 10cm;
+    
+}
+
+.loginButton{
+    border-radius: 50px;
+    background-color: green;  
+}
+
+.image{
+    float: left;
+    width: 50%;
+}
+
