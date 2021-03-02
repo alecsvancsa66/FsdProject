@@ -6,6 +6,11 @@
     
 }
 
+.example-full-width {
+  background-color : gray;
+  display : flex;
+}
+
 .textInput {
   background-color : gray;
   display : flex;
@@ -32,6 +37,7 @@
     border-radius: 50px;
     background-color: green; 
     display : flex;
+    align-content : center;
 }
 
 .image{
