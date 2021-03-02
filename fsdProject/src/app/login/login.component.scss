@@ -2,9 +2,14 @@
     background-color: #fff;
     color: #000;
     text-align: center;
- 
+    width : 75%;
     
-    
+}
+
+.textInput {
+  background-color : grey;
+  display : flex;
+  
 }
 
 .container{
@@ -25,10 +30,12 @@
 
 .loginButton{
     border-radius: 50px;
-    background-color: green;  
+    background-color: green; 
+    display : flex;
 }
 
 .image{
+    display: flex;
     float: left;
     width: 50%;
 }
