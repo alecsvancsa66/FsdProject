@@ -5,24 +5,24 @@
              
         </mat-card-header>
         <img mat-card-image src="https://img.freepik.com/free-vector/illustration-user-avatar-icon_53876-5907.jpg?size=338&ext=jpg" alt="Photo" class="image"> 
-        <mat-card-content>
+        <mat-card-content class="formContainer">
           <mat-card-title class="header" >User Login</mat-card-title>
-          <form class="example-form">
-            <mat-form-field class="example-full-width" appearance="outline" >
+          <form class>
+            <mat-form-field appearance="outline" >
               <input matInput placeholder="Email" value="" class = "textInput">
               <mat-icon matPrefix>email</mat-icon>
             </mat-form-field>
             
             <br>
           
-            <mat-form-field class="example-full-width" appearance="outline" color="primary">
+            <mat-form-field appearance="outline" color="primary">
               <input matInput placeholder="Password" value="" type="password" class = "textInput">
               <mat-icon matPrefix>lock</mat-icon>
             </mat-form-field>
 
           </form>
           <mat-card-actions class="actionsContainer">
-          <button mat-button mat-raised-button color="primary" class="loginButton" >Login</button>
+          <button mat-button mat-raised-button color="primary" class="loginButton">Login</button>
             <a href="">Forgot Username/Password</a>
         </mat-card-actions>
           
