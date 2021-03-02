@@ -9,6 +9,7 @@
 .example-full-width {
   background-color : gray;
   display : flex;
+  width : 30%
 }
 
 .textInput {
@@ -37,7 +38,7 @@
     border-radius: 50px;
     background-color: green; 
     display : flex;
-    align-content : center;
+    text-align : center;
 }
 
 .image{
