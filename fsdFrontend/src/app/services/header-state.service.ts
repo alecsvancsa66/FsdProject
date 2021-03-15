@@ -1,9 +1,19 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HeaderStateService {
+  headerStatus: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor() { }
+  // getHeadedStatus(): Observable<boolean> {}
+
+  // toggle() {
+  //   this.visible = !this.visible;
+  //   if (this.visible) {
+  //     this.open.emit(null);
+  //   } else {
+  //     this.close.emit(null);
+  //   }
+  // }
 }
