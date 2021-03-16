@@ -1,9 +1,9 @@
 {
    "type": "postgres", 
-   "host": "127.0.0.1", 
+   "host": "db", 
    "port": 5432, 
-   "username": "postgres", 
-   "password": "pass123", 
+   "username": "db_username", 
+   "password": "db_password", 
    "database": "db_name", 
    
    "synchronize": true,

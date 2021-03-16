@@ -12,16 +12,16 @@ services:
       - db
     volumes:
       - .:/app
-    command: < 
-      bash -c "nmp install && npm start"
+    command: > 
+      bash -c "npm install && npm start"
   
   # DB
   db:
     image: postgres:latest
     environment:
       POSTGRES_DB: "db_name"
-      POSTGRES_USER: "postgres"
-      POSTGRES_PASSWORD: "pass123"
+      POSTGRES_USER: "db_username"
+      POSTGRES_PASSWORD: "db_password"
     ports:
       - "5432:5432"
     volumes:
