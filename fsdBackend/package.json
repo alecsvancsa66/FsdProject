@@ -8,11 +8,14 @@
       "typescript": "3.3.3333"
    },
    "dependencies": {
+      "bcryptjs": "^2.4.3",
       "body-parser": "^1.18.1",
       "express": "^4.15.4",
+      "express-jwt": "^6.0.0",
       "pg": "^8.5.1",
       "reflect-metadata": "^0.1.10",
-      "typeorm": "0.2.31"
+      "typeorm": "0.2.31",
+      "uuid": "^8.3.2"
    },
    "scripts": {
       "start": "ts-node src/index.ts"

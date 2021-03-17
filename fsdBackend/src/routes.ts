@@ -1,3 +1,4 @@
+import { AuthController } from "./controller/AuthController";
 import { DessertController } from "./controller/DessertController";
 import {UserController} from "./controller/UserController";
 
@@ -26,4 +27,9 @@ export const Routes = [{
     route: "/desserts",
     controller: DessertController,
     action: "all"
+}, {
+    method: "post",
+    route: "/login",
+    controller: AuthController,
+    action: "login"
 }];
