@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -42,15 +41,7 @@ import { HeaderComponent } from './header/header.component';
     MatTableModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: function  tokenGetter() {
-             return     localStorage.getItem('access_token');},
-        allowedDomains: ['localhost:4200'],
-        disallowedRoutes: ['http://localhost:4200/login']
-      }
-    })
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

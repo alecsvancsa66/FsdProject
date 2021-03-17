@@ -37,9 +37,7 @@ export class DashboardComponent implements OnInit {
   dataSource = new MatTableDataSource<IDesert>(data);
   selection = new SelectionModel<IDesert>(true, []);
 
-  
   ngOnInit(): void {
-    console.log(data);
   }
 
   /** Whether the number of selected elements matches the total number of rows. */
