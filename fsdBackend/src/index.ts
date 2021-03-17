@@ -5,6 +5,7 @@ import * as bodyParser from "body-parser";
 import {Request, Response} from "express";
 import {Routes} from "./routes";
 import {User} from "./entity/User";
+import { Dessert } from "./entity/Dessert";
 
 createConnection().then(async connection => {
 
@@ -41,6 +42,26 @@ createConnection().then(async connection => {
         firstName: "Phantom",
         lastName: "Assassin",
         age: 24
+    }));
+    await connection.manager.save(connection.manager.create(Dessert, {
+        name: "Dessert1",
+        calories: 100,
+        fat: 12,
+        carbs: 12,
+        protein: 25,
+        sodium: 14,
+        calcium: 12,
+        iron: 14
+    }));
+    await connection.manager.save(connection.manager.create(Dessert, {
+        name: "Dessert2",
+        calories: 99,
+        fat: 12,
+        carbs: 12,
+        protein: 25,
+        sodium: 14,
+        calcium: 12,
+        iron: 14
     }));
 
     console.log("Express server has started on port 3000. Open http://localhost:3000/users to see results");
