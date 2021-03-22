@@ -6,12 +6,15 @@ import {Request, Response} from "express";
 import {Routes} from "./routes";
 import {User} from "./entity/User";
 import { Dessert } from "./entity/Dessert";
+//import {cors} from "cors";
 
 createConnection().then(async connection => {
 
     // create express app
     const app = express();
+    const cors = require('cors');
     app.use(bodyParser.json());
+    app.use(cors());
 
     // register express routes from defined application routes
     Routes.forEach(route => {
