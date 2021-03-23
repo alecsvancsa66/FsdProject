@@ -1,6 +1,8 @@
 import { AuthController } from "./controller/AuthController";
 import { DessertController } from "./controller/DessertController";
 import {UserController} from "./controller/UserController";
+import { checkJwt } from "./utils/checkJwt";
+
 
 export const Routes = [{
     method: "get",
@@ -30,6 +32,7 @@ export const Routes = [{
 }, {
     method: "post",
     route: "/login",
+    guard: checkJwt,
     controller: AuthController,
     action: "login"
 }];
