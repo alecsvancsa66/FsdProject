@@ -8,6 +8,7 @@
       "typescript": "3.3.3333"
    },
    "dependencies": {
+      "@tensorflow/tfjs-node": "^3.3.0",
       "bcryptjs": "^2.4.3",
       "body-parser": "^1.18.1",
       "cors": "^2.8.5",

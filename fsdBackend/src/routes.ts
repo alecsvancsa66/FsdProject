@@ -32,7 +32,7 @@ export const Routes = [{
 }, {
     method: "post",
     route: "/login",
-    guard: checkJwt,
+    // guard: checkJwt,
     controller: AuthController,
     action: "login"
 }];
