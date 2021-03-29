@@ -19,7 +19,7 @@ import * as tf from '@tensorflow/tfjs-node';
 
 require('isomorphic-fetch');
 const fetch = require('node-fetch');
-const PNGReader = require('png.js');
+const PNGReader = require('./png.js');
 
 const IMAGE_SIZE = 784;
 const NUM_CLASSES = 10;

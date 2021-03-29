@@ -32,7 +32,7 @@ export class DessertController {
     async eval(request: Request, response: Response, next: NextFunction) {
         const data = new MnistData();
         await data.load();
-        const model = await tf.loadLayersModel('localstorage://my-model-1');
+        const model = await tf.loadLayersModel('file://../../model.json');
 
         return doPrediction(model, data, 1);
     }
