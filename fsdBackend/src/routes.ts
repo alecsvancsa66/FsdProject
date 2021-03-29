@@ -29,6 +29,12 @@ export const Routes = [{
     route: "/desserts",
     controller: DessertController,
     action: "all"
+},
+{
+    method: "get",
+    route: "/eval",
+    controller: DessertController,
+    action: "eval"
 }, {
     method: "post",
     route: "/login",
