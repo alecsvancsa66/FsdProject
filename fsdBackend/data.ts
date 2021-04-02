@@ -19,7 +19,7 @@ import * as tf from '@tensorflow/tfjs-node';
 
 require('isomorphic-fetch');
 const fetch = require('node-fetch');
-const PNGReader = require('./png.js');
+const PNGReader = require('./pngReader');
 
 const IMAGE_SIZE = 784;
 const NUM_CLASSES = 10;
@@ -60,55 +60,13 @@ export class MnistData {
     this.shuffledTestIndex = 0;
   }
 
- 
-
   async load() {
-    // // Make a request for the MNIST sprited image.
-    // const img = new Image();
-    // const canvas = document.createElement('canvas');
-    // const ctx = canvas.getContext('2d');
-    
-    // const imgRequest = new Promise((resolve, reject) => {
-    //   img.crossOrigin = '';
-    //   img.onload = () => {
-    //     img.width = img.naturalWidth;
-    //     img.height = img.naturalHeight;
-
-    //     const datasetBytesBuffer =
-    //         new ArrayBuffer(NUM_DATASET_ELEMENTS * IMAGE_SIZE * 4);
-
-    //     const chunkSize = 5000;
-    //     canvas.width = img.width;
-    //     canvas.height = chunkSize;
-
-    //     for (let i = 0; i < NUM_DATASET_ELEMENTS / chunkSize; i++) {
-    //       const datasetBytesView = new Float32Array(
-    //           datasetBytesBuffer, i * IMAGE_SIZE * chunkSize * 4,
-    //           IMAGE_SIZE * chunkSize);
-    //       ctx.drawImage(
-    //           img, 0, i * chunkSize, img.width, chunkSize, 0, 0, img.width,
-    //           chunkSize);
-
-    //       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-
-    //       for (let j = 0; j < imageData.data.length / 4; j++) {
-    //         // All channels hold an equal value since the image is grayscale, so
-    //         // just read the red channel.
-    //         datasetBytesView[j] = imageData.data[j * 4] / 255;
-    //       }
-    //     }
-    //     this.datasetImages = new Float32Array(datasetBytesBuffer);
-
-    //     resolve();
-    //   };
-    //   img.src = MNIST_IMAGES_SPRITE_PATH;
-    // });
 
      const imgRequest = fetch(MNIST_IMAGES_SPRITE_PATH).then(resp => resp.arrayBuffer()).then(buffer => {
       return new Promise(resolve => {
         const reader = new PNGReader(buffer);
 
-        return reader.parse((err, png) => {
+        return reader.parse((err, png: any) => {
           const pixels = Float32Array.from(png.pixels).map(pixel => {
             return pixel / 255;
           });
