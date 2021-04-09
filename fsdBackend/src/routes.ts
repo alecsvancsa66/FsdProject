@@ -31,11 +31,12 @@ export const Routes = [{
     action: "all"
 },
 {
-    method: "get",
+    method: "post",
     route: "/eval",
     controller: DessertController,
     action: "eval"
-}, {
+}, 
+{
     method: "post",
     route: "/login",
     // guard: checkJwt,

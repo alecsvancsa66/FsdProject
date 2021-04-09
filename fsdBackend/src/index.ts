@@ -13,8 +13,16 @@ createConnection().then(async connection => {
     // create express app
     const app = express();
     const cors = require('cors');
+    const fileUpload = require('express-fileupload')
+    
     app.use(bodyParser.json());
+    
     app.use(cors());
+    
+    app.use(fileUpload({
+        useTempFiles : false,
+        tempFileDir : '/tmp/'
+    }));
 
     // register express routes from defined application routes
     Routes.forEach(route => {

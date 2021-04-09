@@ -16,6 +16,7 @@
  */
 
 import * as tf from '@tensorflow/tfjs-node';
+import { buffer } from '@tensorflow/tfjs-node';
 
 require('isomorphic-fetch');
 const fetch = require('node-fetch');
@@ -62,8 +63,7 @@ export class MnistData {
 
   async load() {
 
-     const imgRequest = fetch(MNIST_IMAGES_SPRITE_PATH).then(resp => resp.arrayBuffer()).then(buffer => {
-      return new Promise(resolve => {
+     const imgRequest = new Promise(resolve => {
         const reader = new PNGReader(buffer);
 
         return reader.parse((err, png: any) => {
@@ -74,7 +74,7 @@ export class MnistData {
           resolve(this.datasetImages);
         });
       });
-    });
+   
 
     const labelsRequest = fetch(MNIST_LABELS_PATH);
     const [imgResponse, labelsResponse] =
@@ -95,6 +95,15 @@ export class MnistData {
         this.datasetLabels.slice(0, NUM_CLASSES * NUM_TRAIN_ELEMENTS);
     this.testLabels =
         this.datasetLabels.slice(NUM_CLASSES * NUM_TRAIN_ELEMENTS);
+  }
+
+  toArrayBuffer(buf){
+    var ab = new ArrayBuffer(buf.length);
+    var view = new Uint8Array(ab);
+    for (var i = 0; i < buf.length; ++i){
+      view[i] = buf[i];
+    }
+    return ab;
   }
 
   nextTrainBatch(batchSize) {
