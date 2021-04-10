@@ -1,11 +1,22 @@
 <div class="container">
-    <div class="subcontainer">
-        <div class="buttonContainer">
-            <button mat-button color="primary">Upload</button>
-        </div>
-        <mat-card class="card">
-            <mat-card-content><img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo">
-            </mat-card-content>
-        </mat-card>
-    </div>
-</div>                                     
+  <div class="buttonContainer">
+    <input
+      style="display: none"
+      type="file"
+      (change)="onFileSelected($event)"
+      #fileInput
+    />
+    <button mat-button color="primary" (click)="fileInput.click()">
+      Upload
+    </button>
+  </div>
+  <div class="subcontainer">
+    <img [src]="localUrl" *ngIf="localUrl" class="imgPlaceholder" />
+
+    <!-- <mat-card class="card">
+      <mat-card-content
+        ><img mat-card-image *ngIf="localUrl" src="localUrl" alt="Photo" />
+      </mat-card-content>
+    </mat-card> -->
+  </div>
+</div>
