@@ -19,6 +19,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { HeaderComponent } from './header/header.component';
+import { GcloudComponent } from './gcloud/gcloud.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HeaderComponent } from './header/header.component';
     LoginComponent,
     DashboardComponent,
     UploadComponent,
-    HeaderComponent
+    HeaderComponent,
+    GcloudComponent
   ],
   imports: [
     BrowserModule,
