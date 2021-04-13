@@ -11,7 +11,7 @@ export class GcloudComponent implements OnInit {
   constructor(private gcloudService: GcloudRequestService) {}
 
   ngOnInit(): void {
-    this.gcloudService.getFromCloud('cloud').subscribe((rez) => {
+    this.gcloudService.getFromCloud().subscribe((rez) => {
       console.log(rez);
     });
   }

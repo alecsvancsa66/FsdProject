@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class GcloudRequestService {
-  baseUrl = 'http://localhost:3000/';
+  baseUrl = 'https://us-central1-fsdproject-310513.cloudfunctions.net/helloWorld';
 
   constructor(private http: HttpClient) {}
 
-  getFromCloud(url: String): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${url}`);
+  getFromCloud(): Observable<any> {
+    return this.http.get(`${this.baseUrl}`);
   }
 }
