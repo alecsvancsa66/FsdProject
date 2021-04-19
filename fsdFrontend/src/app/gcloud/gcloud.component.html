@@ -1,1 +1,54 @@
-<p>gcloud works!</p>
+<div *ngFor="let post of posts; let i = index" style="margin: 10px">
+  <mat-card style="max-width: 400px">
+    <mat-card-header>
+      <mat-card-title>{{ post.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{ post.description }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div style="margin: 10px">
+  <mat-card style="max-width: 400px">
+    <form [formGroup]="signinForm" class>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Title</mat-label>
+          <input
+            formControlName="title"
+            matInput
+            placeholder="Title"
+            value=""
+            class="textInput form-control"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <textarea
+            formControlName="description"
+            matInput
+            placeholder="Description"
+            value=""
+            class="textInput form-control"
+            matInput
+          ></textarea>
+        </mat-form-field>
+      </div>
+    </form>
+    <mat-card-actions>
+      <button
+        mat-button
+        mat-raised-button
+        color="primary"
+        class="loginButton"
+        (click)="onSubmit()"
+        [disabled]="!signinForm.valid"
+      >
+        Create
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

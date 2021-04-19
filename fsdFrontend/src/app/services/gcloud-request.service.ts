@@ -6,11 +6,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class GcloudRequestService {
-  baseUrl = 'https://us-central1-fsdproject-310513.cloudfunctions.net/helloWorld';
+  getUrl =
+    'https://us-central1-fsdproject-310513.cloudfunctions.net/helloWorld';
+
+  postUrl = 'https://us-central1-fsdproject-310513.cloudfunctions.net/saveLog';
 
   constructor(private http: HttpClient) {}
 
-  getFromCloud(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+  getPosts(): Observable<any> {
+    return this.http.get(`${this.getUrl}`);
+  }
+
+  savePost(post: any): Observable<any> {
+    return this.http.post(`${this.postUrl}`, post);
   }
 }
